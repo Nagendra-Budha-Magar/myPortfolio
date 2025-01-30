@@ -1,0 +1,408 @@
+:root {
+    --light-color: #FFFFFF;
+    --primary-color: #000000;
+    --secondary-color: #060653;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    text-align: left;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+label.logo {
+    font-weight: bold;
+    font-size: 2em;
+    line-height: 80px;
+    padding: 0 25px;
+}
+
+nav ul {
+    float: right;
+    margin: 25px;
+}
+
+Nav ul li a {
+    font-size: 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+
+Nav ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+}
+
+Nav ul li::after {
+    content: "";
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -8px;
+    background-color: blue;
+    position: absolute;
+    transition: 0.5s;
+}
+
+Nav ul li:hover::after {
+    width: 100%;
+}
+
+.checkbtn {
+    font-size: 1.5em;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+.container1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--secondary-color);
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.profile-img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top: 8px solid red;
+    border-bottom: 8px solid yellow;
+    border-left: 8px solid green;
+    border-right: 8px solid blue;
+    border-radius: 50%;
+    animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.container1 h1 {
+    color: var(--light-color);
+}
+
+.container1 p {
+    color: var(--light-color);
+    font-size: 1.5em;
+}
+
+.introduction {
+    position: relative;
+    animation: slideInRight 4s ease-out forwards;
+    /* Apply the animation */
+    opacity: 0;
+    /* Start with hidden element */
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        /* Start off-screen to the right */
+        opacity: 0;
+        /* Start with hidden element */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* End at the original position */
+        opacity: 1;
+        /* Fully visible */
+    }
+}
+
+
+.about {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    padding: 25px 0;
+
+}
+
+.about p {
+    text-align: left;
+    margin: 0 0 25px 0;
+    font-size: 1.5em;
+}
+
+.about h1 {
+    font-size: 2em;
+    font-weight: 500;
+    text-align: left;
+    color: var(--secondary-color);
+    margin: 0 0 10px 0;
+}
+
+.container3 {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 75px;
+
+}
+
+.skill {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2em;
+    color: var(--secondary-color);
+
+}
+
+/* .skill img{
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+} */
+
+.skill-image {
+    width: 250px;
+    height: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
+    border-radius: 10px;
+}
+
+.skill-image:hover {
+    transform: scale(1.1);
+    /* Zoom in effect */
+    box-shadow: 0 0 20px 3px rgb(59, 58, 58);
+    /* Glow shadow effect */
+}
+
+.container3 img {
+    border: none;
+    cursor: pointer;
+}
+
+.Main_footer {
+    background-color: #2c3e50;
+    /* Dark blue-gray */
+    text-align: center;
+    padding: 50px 0;
+    color: #ecf0f1;
+    /* Light gray for text */
+}
+
+.Main_footer p {
+    font-size: 1.5em;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+
+}
+
+
+.footer_right {
+    padding: 0 30px 0 0;
+
+
+}
+
+.footer_right i {
+    cursor: pointer;
+    margin: 5px;
+    color: #FFFFFF;
+}
+
+.email {
+    text-align: center;
+    margin: 50px;
+    font-size: 1.5em;
+}
+
+nav ul li a {
+    font-size: 1.2em;
+}
+
+@media (max-width: 850px) {
+
+    /* nav{
+        width: 100%;
+    } */
+    label.logo {
+        font-size: 2em;
+        padding: 0 25px;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: auto;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .4s;
+        margin: none;
+    }
+    nav ul li{
+        display: block;
+        line-height: 40px;
+    }
+    nav ul li a{
+        color: #FFFFFF;
+        font-size: 20px;
+    }
+    
+    Nav ul li:hover::after {
+        display: none;
+    }
+    #check:checked ~ ul{
+        left: 0%;
+    }
+    
+    
+    .profile-img {
+        width: 200px;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 5px 50px 15px;
+    }
+    
+    .profile-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-top: 8px solid red;
+        border-bottom: 8px solid yellow;
+        border-left: 8px solid green;
+        border-right: 8px solid blue;
+        border-radius: 50%;
+        animation: rotateBorder 4s linear infinite;
+        margin: 0 5px 50px 15px;
+    }
+    
+    @keyframes rotateBorder {
+        0% {
+            transform: rotate(0deg);
+        }
+    
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .container1 h1 {
+        padding: 0 5px 0 5px;
+    }
+    .container1 p {
+        padding: 0 5px 0 5px;
+    }
+    
+    .about h1 {
+        margin: 0 15px 0 15px;
+    }
+
+    .about p {
+        margin: 0 15px 0 15px;
+    }
+    
+    
+    
+    .skill h1 {
+        margin-bottom: 25px;
+    
+    }
+    
+    
+    .skill-image {
+        width: 250px;
+        height: 250px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Smooth transition */
+        
+    }
+    
+    .skill-image:active {
+        transform: scale(1.1);
+        /* Zoom in effect */
+        box-shadow: 0 0 20px 3px rgb(59, 58, 58);
+        /* Glow shadow effect */
+        
+    }
+    
+
+    .email{
+        text-align: center;
+        margin: 50px 10px 50px 10px;
+    }
+
+    
+    .Main_footer p {
+        text-align: left;
+        margin: 0 15px 0 15px;
+    }
+    
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+    
+    }
+    
+    
+    .footer_right {
+        padding: 0;
+    
+    }
+    
+    .footer_right i {
+        margin: 0;
+    }
+    
+}
