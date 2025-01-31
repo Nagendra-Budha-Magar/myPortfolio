@@ -16,6 +16,10 @@ body {
 
 html {
     scroll-behavior: smooth;
+<<<<<<< HEAD
+=======
+
+>>>>>>> beb59be (updated)
 }
 
 
@@ -27,7 +31,11 @@ label.logo {
     padding: 0 25px;
 }
 
+<<<<<<< HEAD
 nav ul {
+=======
+ul {
+>>>>>>> beb59be (updated)
     float: right;
     margin: 25px;
 }
@@ -239,6 +247,14 @@ Nav ul li:hover::after {
 
 }
 
+<<<<<<< HEAD
+=======
+.footer_left {
+    padding: 10px 0 0 30px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+>>>>>>> beb59be (updated)
 
 .footer_right {
     padding: 0 30px 0 0;
@@ -284,7 +300,11 @@ nav ul li a {
         left: -100%;
         text-align: center;
         transition: all .4s;
+<<<<<<< HEAD
         margin: none;
+=======
+        margin: 0 0 0 0; /*remove margin from full screen*/
+>>>>>>> beb59be (updated)
     }
     nav ul li{
         display: block;
