@@ -26,6 +26,7 @@
                     <!-- <li> <a href="#">Objective</a></li> -->
                     <li> <a href="#Contact">Contact</a></li>
                 </ul>
+                <div class="overlay"></div>
             </nav>
         </header>
     </div>
@@ -50,12 +51,8 @@
         <section id="Abouts">
             <div class="about">
                 <h1>About Me</h1>
-                <p>I'm Nagendra Budha Magar, a dedicated student and aspiring web developer with a strong <br>
-                    foundation
-                    in HTML, CSS and I'm currently learning javascript to enhance my skill in web development.</p>
-                <p>
-                    As I'm learning web development and C\C++ <br> but I'm passionate about Cloud Computing and Devops.
-                </p>
+                <p>I'm Nagendra Budha Magar, a dedicated student and aspiring web developer with a strong foundation in HTML, CSS and I'm currently learning javascript to enhance my skill in web development.</p>
+                <p>As I'm learning web development and C/C++, I'm passionate about Cloud Computing and DevOps.</p>
             </div>
         </section>
         <section id="Skills">
@@ -90,35 +87,53 @@
             </div>
         </section>
 
-
-
-
         <section id="Contact">
-            <div class="email">
-                <p>Contact : nagendrabudha47@gmail.com</p>
+            <div class="contact-container">
+                <h1>Contact Me</h1>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
             </div>
+            <div class="email">
+                <p>Or reach me directly at: nagendrabudha47@gmail.com</p>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="Main_footer">
             <p>Note: This page is in development phase as I'm still learning and exploring.</p>
             <div class="footer">
+                <div class="footer_right">
+                    <p>Connect with me through:</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/19jwbAcEgN/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/ashish-budha-03a440342"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://x.com/magar_b38595?t=CX6UUbeotqiQ5NEoq39w0g&s=09"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/ashishbudha123?igsh=d29oMnNtaTAwY243"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </div>
+                </div>
                 <div class="footer_left">
                     NAGENDRA&copy;2025
                 </div>
-                <div class="footer_right">
-                    <p>Connect me through :
-                        <a href="https://www.facebook.com/share/19jwbAcEgN/"><i class="fa fa-facebook-official"
-                                aria-hidden="true"></i></a>
-                        <a href="https://www.linkedin.com/in/ashish-budha-03a440342"><i class="fa fa-linkedin"
-                                aria-hidden="true"></i></a>
-                        <a href="https://x.com/magar_b38595?t=CX6UUbeotqiQ5NEoq39w0g&s=09"><i class="fa fa-twitter"
-                                aria-hidden="true"></i></a>
-                        <a href="https://www.instagram.com/ashishbudha123?igsh=d29oMnNtaTAwY243"><i
-                                class="fa fa-instagram" aria-hidden="true"></i></a>
-                    </p>
-                </div>
             </div>
         </div>
-        </section>
     </footer>
+    <script src="script.js"></script>
 </body>
+</html>
