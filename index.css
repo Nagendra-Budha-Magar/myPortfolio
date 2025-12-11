@@ -344,13 +344,20 @@ main {
     }
 }
 
+/* About Section */
+#Abouts {
+    background-color: var(--section-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
 .about {
     display: grid;
     justify-content: center;
     text-align: center;
     padding: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100;
+    /* max-width: 1200px; */
+    margin: 25px 25px;
     background-color: var(--light-color);
     padding: 40px;
     border-radius: 15px;
@@ -365,7 +372,6 @@ main {
     line-height: 1.5;
     word-wrap: break-word;
 }
-
 .about h1 {
     font-size: 2em;
     font-weight: 500;
@@ -387,21 +393,24 @@ main {
 
 }
 
+/* Skills Section */
+#Skills {
+    background: linear-gradient(to bottom, var(--section-bg), var(--light-color));
+    border-bottom: 1px solid var(--border-color);
+}
+
 .skill {
     text-align: center;
     font-weight: 500;
     font-size: 2em;
     color: var(--secondary-color);
     background-color: var(--light-color);
+    margin: 25px 25px;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 15px var(--shadow-color);
     border: 1px solid var(--border-color);
 }
-
-/* .skill img{
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-} */
 
 .skill-image {
     width: 250px;
@@ -425,6 +434,7 @@ main {
     cursor: pointer;
 }
 
+/* Footer */
 .Main_footer {
     background: linear-gradient(to right, var(--secondary-color), #16213e);
     text-align: center;
@@ -472,6 +482,7 @@ main {
     justify-content: center;
     flex-wrap: wrap;
 }
+
 
 .footer_right i {
     color: var(--light-color);
@@ -558,16 +569,6 @@ main {
     }
 }
 
-.email {
-    text-align: center;
-    margin: 50px;
-    font-size: 1.5em;
-}
-
-nav ul li a {
-    font-size: 1.2em;
-}
-
 @media (max-width: 850px) {
     .container1 {
         flex-direction: column;
@@ -601,6 +602,30 @@ nav ul li a {
     .profile-img {
         width: 200px;
         height: 200px;
+    }
+}
+@media (max-width: 850px) {
+    .contact-container {
+        margin: 30px 20px;
+        padding: 20px;
+    }
+
+    .contact-container h1 {
+        font-size: 2em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
+    }
+    .about,
+    .skill {
+        padding: 20px;
     }
 }
 
@@ -664,6 +689,12 @@ nav ul li a {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+/* Contact Section */
+#Contact {
+    background-color: var(--section-bg);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .contact-container {
@@ -744,27 +775,6 @@ nav ul li a {
     color: var(--secondary-color);
 }
 
-@media (max-width: 850px) {
-    .contact-container {
-        margin: 30px 20px;
-        padding: 15px;
-    }
-
-    .contact-container h1 {
-        font-size: 2em;
-    }
-
-    .form-group input,
-    .form-group textarea {
-        padding: 10px;
-    }
-
-    .submit-btn {
-        width: 100%;
-        padding: 12px;
-    }
-}
-
 /* Section Styles */
 section {
     position: relative;
@@ -779,132 +789,4 @@ section::before {
     right: 0;
     height: 1px;
     background: linear-gradient(to right, transparent, var(--border-color), transparent);
-}
-
-/* About Section */
-#Abouts {
-    background-color: var(--section-bg);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.about {
-    background-color: var(--light-color);
-    margin: 25px 25px;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px var(--shadow-color);
-    border: 1px solid var(--border-color);
-}
-
-.about h1 {
-    color: var(--secondary-color);
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 10px;
-    display: inline-block;
-}
-
-/* Skills Section */
-#Skills {
-    background: linear-gradient(to bottom, var(--section-bg), var(--light-color));
-    border-bottom: 1px solid var(--border-color);
-}
-
-.skill {
-    background-color: var(--light-color);
-    margin: 25px 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px var(--shadow-color);
-    border: 1px solid var(--border-color);
-}
-
-.skill-image {
-    border: 2px solid var(--border-color);
-    transition: all 0.3s ease;
-}
-
-.skill-image:hover {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
-}
-
-/* Contact Section */
-#Contact {
-    background-color: var(--section-bg);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.contact-container {
-    background-color: var(--light-color);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 5px 15px var(--shadow-color);
-}
-
-.form-group input,
-.form-group textarea {
-    border: 2px solid var(--border-color);
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--accent-color);
-    box-shadow: 0 0 10px rgba(78, 205, 196, 0.2);
-}
-
-.submit-btn {
-    background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-    border: none;
-    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
-}
-
-.submit-btn:hover {
-    background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start));
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
-}
-
-/* Footer */
-.Main_footer {
-    background: linear-gradient(to right, var(--secondary-color), #16213e);
-    border-top: 1px solid var(--border-color);
-}
-
-.footer_right i {
-    color: var(--light-color);
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.footer_right i:hover {
-    color: var(--accent-color);
-    border-color: var(--accent-color);
-    transform: translateY(-3px);
-    box-shadow: 0 0 15px rgba(78, 205, 196, 0.3);
-}
-
-/* Navbar */
-.hero {
-    background: linear-gradient(to right, var(--secondary-color), #16213e);
-    border-bottom: 1px solid var(--border-color);
-}
-
-Nav ul li a {
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-}
-
-Nav ul li a:hover {
-    border-color: var(--accent-color);
-    background-color: rgba(78, 205, 196, 0.1);
-}
-
-@media (max-width: 850px) {
-
-    .about,
-    .skill,
-    .contact-container {
-        padding: 20px;
-    }
 }
