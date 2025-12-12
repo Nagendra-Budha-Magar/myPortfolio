@@ -69,27 +69,51 @@ formGroups.forEach(group => {
     observer.observe(group);
 });
 
-// Form submission handling
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    // Here you would typically send the data to a server
-    // For now, we'll just show a success message
-    const submitBtn = contactForm.querySelector('.submit-btn');
-    submitBtn.textContent = 'Message Sent!';
-    submitBtn.style.backgroundColor = '#4CAF50';
-    
-    // Reset form after 2 seconds
-    setTimeout(() => {
+// Form submission handling (sending to backend)
+const submitBtn = contactForm.querySelector(".submit-btn");
+const statusDiv = document.createElement("div"); // to show status messages
+contactForm.appendChild(statusDiv);
+
+contactForm.addEventListener("submit", async function(e) {
+    e.preventDefault(); // prevent page reload
+
+    // Collect form data
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+    };
+
+    // Disable button while sending
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    try {
+        const response = await fetch("https://localhost:5001/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        // Show success message below the form
+        statusDiv.textContent = result.status;
+        statusDiv.style.color = "green";
+
+        // Reset form
         contactForm.reset();
-        submitBtn.textContent = 'Send Message';
-        submitBtn.style.backgroundColor = '';
-    }, 2000);
+    } catch (error) {
+        console.error(error);
+        statusDiv.textContent = "Error sending message!";
+        statusDiv.style.color = "red";
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+    }
 });
+
 
 // Add hover effect to form inputs
 const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
